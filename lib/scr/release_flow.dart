@@ -1,12 +1,11 @@
 import 'dart:io';
 
+import 'package:pub_semver/pub_semver.dart';
 import 'package:yaml/yaml.dart';
 import 'package:yaml_edit/yaml_edit.dart';
 
 import 'release_type.dart';
 import 'package:path/path.dart' as p;
-
-import 'version.dart';
 
 class ReleaseFlow {
   static const pubspecFileName = "pubspec.yaml";
@@ -21,17 +20,20 @@ class ReleaseFlow {
     final pubspecContent = pubspecFile.readAsStringSync();
 
     final pubspecYamlReader = loadYaml(pubspecContent);
-    final version = Version.fromString(pubspecYamlReader['version']);
+    var version = Version.parse(pubspecYamlReader['version']);
 
     switch (releaseType) {
       case ReleaseType.patch:
-        version.upPatch();
+        version = version.nextPatch;
         break;
       case ReleaseType.minor:
-        version.upMinor();
+        version = version.nextMinor;
         break;
       case ReleaseType.major:
-        version.upMajor();
+        version = version.nextMajor;
+        break;
+      case ReleaseType.breaking:
+        version = version.nextBreaking;
         break;
     }
 
