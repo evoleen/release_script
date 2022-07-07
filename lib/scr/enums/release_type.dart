@@ -5,10 +5,8 @@ part 'release_type.g.dart';
 
 class ReleaseType extends EnumClass {
 
-  static const ReleaseType patch = _$patch;
-  static const ReleaseType minor = _$minor;
-  static const ReleaseType major = _$major;
-  static const ReleaseType breaking = _$breaking;
+  static const ReleaseType beta = _$beta;
+  static const ReleaseType release = _$release;
 
   const ReleaseType._(String name) : super(name);
 
