@@ -1,5 +1,5 @@
 name: release_script
-description: A tool for releasing dart apps
+description: An internal tool for releasing dart apps
 version: 0.0.1
 
 environment:
