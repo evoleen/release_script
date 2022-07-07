@@ -46,7 +46,6 @@ class ReleaseFlow {
         .map(versionMapper);
 
     if (versionsList.isEmpty) {
-      print('empty');
       return Version.none;
     }
 
