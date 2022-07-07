@@ -32,7 +32,7 @@ class ReleaseFlow {
     }
 
     print("Got git tag list");
-    return tagResult as String;
+    return tagResult.stdout as String;
   }
 
   @protected
