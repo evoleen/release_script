@@ -37,19 +37,20 @@ class ReleaseFlow {
 
   @protected
   Version getLastVersionFromTagStgOut(String tagStgOut) {
-    final tagsList = tagStgOut.split('\n');
-
-    if (tagsList.isEmpty) {
-      return Version.none;
-    }
-
-    return tagsList
+    final versionsList = tagStgOut
+        .split('\n')
         .map((str) => str.toLowerCase())
         .where((str) =>
             str.startsWith(ReleaseType.beta.name) ||
             str.startsWith(ReleaseType.release.name))
-        .map(versionMapper)
-        .reduce((lhs, rhs) => lhs > rhs ? lhs : rhs);
+        .map(versionMapper);
+
+    if (versionsList.isEmpty) {
+      print('empty');
+      return Version.none;
+    }
+
+    return versionsList.reduce((lhs, rhs) => lhs > rhs ? lhs : rhs);
   }
 
   @protected
