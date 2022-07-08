@@ -4,9 +4,9 @@
 //
 
 import 'package:args/args.dart';
-import 'package:release_script/scr/enums/release_type.dart';
-import 'package:release_script/scr/enums/release_version.dart';
-import 'package:release_script/scr/release_flow.dart';
+import 'package:release_script/src/enums/release_type.dart';
+import 'package:release_script/src/enums/release_version.dart';
+import 'package:release_script/src/release_flow.dart';
 
 void main(List<String> args) {
   final parser = ArgParser();
