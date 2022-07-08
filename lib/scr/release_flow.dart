@@ -83,7 +83,7 @@ class ReleaseFlow {
 
   @protected
   void createGitTag(Version newVersion) {
-    final newTag = '${releaseType.name}-$newVersion';
+    final newTag = '${releaseType.name.toUpperCase()}-$newVersion';
     print('New tag will be $newTag');
 
     final createResult = Process.runSync('git', ['tag', newTag]);
