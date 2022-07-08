@@ -1,3 +1,8 @@
+//
+// Contributors @vasbaz
+// Copyright from Evoleen 2022
+//
+
 import 'package:args/args.dart';
 import 'package:release_script/scr/enums/release_type.dart';
 import 'package:release_script/scr/enums/release_version.dart';

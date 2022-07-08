@@ -1,3 +1,8 @@
+//
+// Contributors @vasbaz
+// Copyright from Evoleen 2022
+//
+
 import 'package:pub_semver/pub_semver.dart';
 
 extension VersionNextBuild on Version {
